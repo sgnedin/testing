@@ -11,10 +11,17 @@
                                     {{ address.address_name }}
                                 </a>
                             </li>
+                            <hr>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" @click="setActiveUch($event)">
+                                    <span data-feather="shopping-cart"></span>
+                                    добавить/удалить...
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </nav>
-                <main-home-component :active_id="active_id" :filial="filial"></main-home-component>
+                <main-home-component :active_id="active_id" :no_addresses="no_addresses" :filial="filial"></main-home-component>
             </div>
         </div>
 </template>
@@ -26,19 +33,19 @@
             return {
                 addresses: '',
                 active_id: 0,
-                filial: undefined
+                filial: undefined,
+                no_addresses: false,
             }
         },
         mounted() {
-            this.update()
             this.getAddress()
         },
         methods: {
-            update: function() {
-                console.log(this.user);
-            },
             getAddress: function() {
                 axios.get('/ajax/addresses').then((response) => {
+                    if(response.data === '') {
+                        this.no_addresses = true
+                    }
                     this.addresses = response.data
                 });
             },
@@ -46,6 +53,10 @@
                 event.preventDefault()
                 this.active_id = id
                 this.filial = address
+            },
+            setActiveUch: function(event) {
+                event.preventDefault()
+                this.active_id = 'newUch'
             }
         }
     }

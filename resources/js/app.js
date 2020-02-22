@@ -26,6 +26,7 @@ Vue.component('home-component', require('./components/HomeComponent.vue').defaul
 Vue.component('main-home-component', require('./components/MainHomeComponent.vue').default);
 Vue.component('cart-main-home-component', require('./components/CartMainHomeComponent.vue').default);
 Vue.component('filter-main-home-component', require('./components/FilterMainHomeComponent.vue').default);
+Vue.component('add-new-uch-component', require('./components/AddNewUchComponent.vue').default);
 
 
 Vue.component('create-home-component', require('./components/CreateHomeComponent.vue').default);

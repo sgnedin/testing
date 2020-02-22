@@ -9,4 +9,6 @@ class Address extends Model
     protected $table = 'addres';
 
     protected $fillable = ['address_name'];
+
+    public $timestamps = false;
 }

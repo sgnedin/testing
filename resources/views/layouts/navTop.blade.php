@@ -7,7 +7,10 @@
     @auth
         <nav class="my-2 my-md-0 mr-md-3">
             <a class="p-2 text-dark" href="{{ route('home.index') }}">Просмотреть активы</a>
-            <a class="p-2 text-dark" href="{{ route('home.create') }}">Добавить объект</a>
+            <a class="p-2 text-dark" href="{{ route('home.create') }}">
+                Добавить объект
+                <span class="badge badge-success badge-pill">14</span>
+            </a>
             <a class="p-2 text-dark" href="#">qrCode</a>
             <a class="p-2 text-dark" href="#">Pricing</a>
         </nav>
